@@ -1,0 +1,216 @@
+{
+  "config": {
+    "first_name": "Michael Angelou",
+    "last_name": "C. Quinit",
+    "nickname": "Miko",
+    "brand_name": "MAYKITHAPPEN",
+    "brand_subtitle": "SYSTEMS ARCHITECT",
+    "title": "Full-Stack Web Engineer & Database Systems Specialist",
+    "specialization": "BS Information Technology · Database Systems Major (MSU-IIT)",
+    "status_pill": "Available for Junior Web Dev / AI Web Dev Roles",
+    "hook": "Bridging complex distributed data architectures with breathtaking, high-performance user interfaces.",
+    "city": "Iligan City, Philippines",
+    "email": "michaelangeloucquinit@gmail.com",
+    "github_url": "https://github.com/Aenzari",
+    "linkedin_url": "https://www.linkedin.com/in/michael-angelou-quinit-9071b7410/",
+    "onlinejobs_url": "https://www.onlinejobs.ph/jobseekers/info/michaelquinit",
+    "resume_url": "/uploads/Michael_Angelou_Quinit_Resume.pdf?t=1792564435207",
+    "avatar_url": "/uploads/miko-avatar.jpg?t=1792555873179",
+    "bio": "4th-year BS Information Technology student majoring in Database Systems at Mindanao State University – Iligan Institute of Technology (MSU-IIT). I engineer high-performance web applications that bridge mission-critical database architectures (Postgres ACID serializable transactions, Neo4j graph topologies, and Redis in-memory caches) with fluid, 60 FPS user interfaces. I build resilient software with architectural discipline, clean state management, and production-tested data integrity.",
+    "coordinates": "8.2280° N, 124.2452° E · ILIGAN CITY"
+  },
+  "projects": [
+    {
+      "id": "baylo",
+      "slug": "baylo",
+      "name": "Baylo",
+      "tagline": "Localized cashless time-bank skills marketplace connecting communities through peer-to-peer service exchange with zero-drift balance escrow.",
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "Supabase",
+        "PostgreSQL",
+        "Node.js"
+      ],
+      "category": "Marketplace",
+      "featured": true,
+      "db_heavy": true,
+      "demo_url": "https://baylo.app",
+      "repo_url": "https://github.com/mikoquinit/baylo",
+      "display_order": 1
+    },
+    {
+      "id": "epigraph",
+      "slug": "epigraph",
+      "name": "EpiGraph",
+      "tagline": "Epidemiological command dashboard mapping airborne disease transmission vectors and infection clusters in real-time.",
+      "stack": [
+        "Neo4j",
+        "Cypher",
+        "Vis.js",
+        "Node.js",
+        "Express",
+        "Docker"
+      ],
+      "category": "Data Visualization",
+      "featured": true,
+      "db_heavy": true,
+      "demo_url": "https://epigraph.dev",
+      "repo_url": "https://github.com/mikoquinit/epigraph",
+      "display_order": 2
+    },
+    {
+      "id": "golazo-lpu-intramurals",
+      "slug": "golazo-lpu-intramurals",
+      "name": "Golazo | LPU Intramurals",
+      "tagline": "Real-time tournament tracking and live-bracket sports management engine handling concurrent score spikes.",
+      "stack": [
+        "Node.js",
+        "Express",
+        "Redis",
+        "EJS",
+        "PostgreSQL"
+      ],
+      "category": "Real-Time",
+      "featured": true,
+      "db_heavy": true,
+      "demo_url": "https://golazo-intramurals.up.railway.app",
+      "repo_url": "https://github.com/mikoquinit/golazo",
+      "display_order": 3
+    },
+    {
+      "id": "wago",
+      "slug": "wago",
+      "name": "Wago",
+      "tagline": "Interactive presentation & mock defense practice platform featuring procedural 3D visual feedback and pacing metrics.",
+      "stack": [
+        "Next.js",
+        "React Three Fiber",
+        "Three.js",
+        "Tailwind CSS",
+        "PostgreSQL"
+      ],
+      "category": "EdTech / WebGL",
+      "featured": true,
+      "db_heavy": false,
+      "demo_url": "https://wago-defense.vercel.app",
+      "repo_url": "https://github.com/mikoquinit/wago",
+      "display_order": 4
+    },
+    {
+      "id": "p-a-c-e-careerconnect",
+      "slug": "p-a-c-e-careerconnect",
+      "name": "P.A.C.E. / CareerConnect+",
+      "tagline": "Integrated university career guidance and counseling portal for student development and institutional tracking.",
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "PostgreSQL"
+      ],
+      "category": "Enterprise",
+      "featured": false,
+      "db_heavy": true,
+      "demo_url": "https://pace-careerconnect.ph",
+      "repo_url": "https://github.com/mikoquinit/pace",
+      "display_order": 5
+    },
+    {
+      "id": "kusy",
+      "slug": "kusy",
+      "name": "Kusy",
+      "tagline": "Student-driven food startup digital recommendation and ordering platform for campus eateries.",
+      "stack": [
+        "React",
+        "Node.js",
+        "Supabase",
+        "Tailwind CSS"
+      ],
+      "category": "E-Commerce",
+      "featured": true,
+      "db_heavy": false,
+      "demo_url": "https://kusyna.netlify.app/",
+      "repo_url": "https://github.com/Aenzari/Kusy",
+      "display_order": 6
+    },
+    {
+      "id": "pawmise",
+      "slug": "pawmise",
+      "name": "Pawmise",
+      "tagline": "Private co-op relationship companion web app with gamified habit growth mechanics.",
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "Prisma",
+        "Tailwind CSS"
+      ],
+      "category": "Social",
+      "featured": false,
+      "db_heavy": false,
+      "demo_url": "https://pawmise.netlify.app",
+      "repo_url": "https://github.com/Aenzari/Pawmise",
+      "display_order": 7
+    },
+    {
+      "id": "wecats",
+      "slug": "wecats",
+      "name": "WeCats",
+      "tagline": "Exclusive verified university community forum with real-time student discussions and role-based access control.",
+      "stack": [
+        "React",
+        "Supabase",
+        "PostgreSQL"
+      ],
+      "category": "Community",
+      "featured": false,
+      "db_heavy": true,
+      "demo_url": "https://wecats.netlify.app",
+      "repo_url": "https://github.com/Aenzari/wecats",
+      "display_order": 8
+    },
+    {
+      "id": "the-safehouse",
+      "slug": "the-safehouse",
+      "name": "The Safehouse",
+      "tagline": "Resource management and reservation system for entertainment lounge operations and asset scheduling.",
+      "stack": [
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
+      "category": "Management",
+      "featured": false,
+      "db_heavy": false,
+      "demo_url": "https://thesafehouse-lounge.ph",
+      "repo_url": "https://github.com/mikoquinit/the-safehouse",
+      "display_order": 9
+    },
+    {
+      "id": "swiftdo",
+      "slug": "swiftdo",
+      "name": "SwiftDo",
+      "tagline": "Web-based task schedule optimizer interface engineered with priority matrix algorithms for peak workflow execution.",
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "TypeScript"
+      ],
+      "category": "Productivity",
+      "featured": false,
+      "db_heavy": false,
+      "demo_url": "https://swiftdo.app",
+      "repo_url": "https://github.com/mikoquinit/swiftdo",
+      "display_order": 10
+    }
+  ],
+  "inquiries": [
+    {
+      "id": "sample-inquiry-1",
+      "name": "Alex Rivera (Tech Lead @ DataScale)",
+      "email": "alex@datascale.io",
+      "company": "DataScale Systems",
+      "message": "Loved your EpiGraph Neo4j vector visualization and PostgreSQL ACID escrow architecture. Are you available for a Junior Full-Stack Engineer role?",
+      "is_read": true,
+      "created_at": "2026-10-20T23:53:31.079Z"
+    }
+  ]
+}
