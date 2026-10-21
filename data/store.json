@@ -14,7 +14,7 @@
     "github_url": "https://github.com/Aenzari",
     "linkedin_url": "https://www.linkedin.com/in/michael-angelou-quinit-9071b7410/",
     "onlinejobs_url": "https://www.onlinejobs.ph/jobseekers/info/michaelquinit",
-    "resume_url": "/uploads/Michael_Angelou_Quinit_Resume.pdf?t=1792564435207",
+    "resume_url": "/uploads/Michael_Angelou_Quinit_Developer_Resume.pdf?t=1792564435207",
     "avatar_url": "/uploads/miko-avatar.jpg?t=1792555873179",
     "bio": "4th-year BS Information Technology student majoring in Database Systems at Mindanao State University – Iligan Institute of Technology (MSU-IIT). I engineer high-performance web applications that bridge mission-critical database architectures (Postgres ACID serializable transactions, Neo4j graph topologies, and Redis in-memory caches) with fluid, 60 FPS user interfaces. I build resilient software with architectural discipline, clean state management, and production-tested data integrity.",
     "coordinates": "8.2280° N, 124.2452° E · ILIGAN CITY"
@@ -25,13 +25,7 @@
       "slug": "baylo",
       "name": "Baylo",
       "tagline": "Localized cashless time-bank skills marketplace connecting communities through peer-to-peer service exchange with zero-drift balance escrow.",
-      "stack": [
-        "React",
-        "Tailwind CSS",
-        "Supabase",
-        "PostgreSQL",
-        "Node.js"
-      ],
+      "stack": ["React", "Tailwind CSS", "Supabase", "PostgreSQL", "Node.js"],
       "category": "Marketplace",
       "featured": true,
       "db_heavy": true,
@@ -44,14 +38,7 @@
       "slug": "epigraph",
       "name": "EpiGraph",
       "tagline": "Epidemiological command dashboard mapping airborne disease transmission vectors and infection clusters in real-time.",
-      "stack": [
-        "Neo4j",
-        "Cypher",
-        "Vis.js",
-        "Node.js",
-        "Express",
-        "Docker"
-      ],
+      "stack": ["Neo4j", "Cypher", "Vis.js", "Node.js", "Express", "Docker"],
       "category": "Data Visualization",
       "featured": true,
       "db_heavy": true,
@@ -64,13 +51,7 @@
       "slug": "golazo-lpu-intramurals",
       "name": "Golazo | LPU Intramurals",
       "tagline": "Real-time tournament tracking and live-bracket sports management engine handling concurrent score spikes.",
-      "stack": [
-        "Node.js",
-        "Express",
-        "Redis",
-        "EJS",
-        "PostgreSQL"
-      ],
+      "stack": ["Node.js", "Express", "Redis", "EJS", "PostgreSQL"],
       "category": "Real-Time",
       "featured": true,
       "db_heavy": true,
@@ -102,11 +83,7 @@
       "slug": "p-a-c-e-careerconnect",
       "name": "P.A.C.E. / CareerConnect+",
       "tagline": "Integrated university career guidance and counseling portal for student development and institutional tracking.",
-      "stack": [
-        "Next.js",
-        "Supabase",
-        "PostgreSQL"
-      ],
+      "stack": ["Next.js", "Supabase", "PostgreSQL"],
       "category": "Enterprise",
       "featured": false,
       "db_heavy": true,
@@ -119,12 +96,7 @@
       "slug": "kusy",
       "name": "Kusy",
       "tagline": "Student-driven food startup digital recommendation and ordering platform for campus eateries.",
-      "stack": [
-        "React",
-        "Node.js",
-        "Supabase",
-        "Tailwind CSS"
-      ],
+      "stack": ["React", "Node.js", "Supabase", "Tailwind CSS"],
       "category": "E-Commerce",
       "featured": true,
       "db_heavy": false,
@@ -137,12 +109,7 @@
       "slug": "pawmise",
       "name": "Pawmise",
       "tagline": "Private co-op relationship companion web app with gamified habit growth mechanics.",
-      "stack": [
-        "Next.js",
-        "Supabase",
-        "Prisma",
-        "Tailwind CSS"
-      ],
+      "stack": ["Next.js", "Supabase", "Prisma", "Tailwind CSS"],
       "category": "Social",
       "featured": false,
       "db_heavy": false,
@@ -155,11 +122,7 @@
       "slug": "wecats",
       "name": "WeCats",
       "tagline": "Exclusive verified university community forum with real-time student discussions and role-based access control.",
-      "stack": [
-        "React",
-        "Supabase",
-        "PostgreSQL"
-      ],
+      "stack": ["React", "Supabase", "PostgreSQL"],
       "category": "Community",
       "featured": false,
       "db_heavy": true,
@@ -172,11 +135,7 @@
       "slug": "the-safehouse",
       "name": "The Safehouse",
       "tagline": "Resource management and reservation system for entertainment lounge operations and asset scheduling.",
-      "stack": [
-        "Node.js",
-        "Express",
-        "MongoDB"
-      ],
+      "stack": ["Node.js", "Express", "MongoDB"],
       "category": "Management",
       "featured": false,
       "db_heavy": false,
@@ -189,11 +148,7 @@
       "slug": "swiftdo",
       "name": "SwiftDo",
       "tagline": "Web-based task schedule optimizer interface engineered with priority matrix algorithms for peak workflow execution.",
-      "stack": [
-        "React",
-        "Tailwind CSS",
-        "TypeScript"
-      ],
+      "stack": ["React", "Tailwind CSS", "TypeScript"],
       "category": "Productivity",
       "featured": false,
       "db_heavy": false,
