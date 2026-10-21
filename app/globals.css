@@ -8,7 +8,8 @@ html {
   color: #f3f4f6;
 }
 
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
@@ -47,7 +48,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF5722;
+  background: #ff5722;
 }
 
 @layer utilities {
@@ -68,17 +69,19 @@ body {
   }
 
   .glow-border {
-    box-shadow: inset 0 0 0 1px rgba(255, 87, 34, 0.15),
-                0 0 35px rgba(255, 87, 34, 0.08);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 87, 34, 0.15),
+      0 0 35px rgba(255, 87, 34, 0.08);
   }
 
   .glow-border-cyan {
-    box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.15),
-                0 0 35px rgba(56, 189, 248, 0.08);
+    box-shadow:
+      inset 0 0 0 1px rgba(56, 189, 248, 0.15),
+      0 0 35px rgba(56, 189, 248, 0.08);
   }
 
   .grid-bg {
-    background-image: 
+    background-image:
       linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 48px 48px;
