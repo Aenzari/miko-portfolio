@@ -1,12 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createServerSupabaseClient } from '@/lib/supabase'
 import { addInquiry } from '@/lib/server-store'
-import { Resend } from 'resend'
-import { thankYouEmailTemplate, internalNotificationTemplate } from '@/lib/email-templates'
-
-const resendApiKey = process.env.RESEND_API_KEY
-const resend = resendApiKey ? new Resend(resendApiKey) : null
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'michaelquinit@gmail.com'
 
 // In-memory rate limiter: 5 requests per minute per IP
 const rateLimit = new Map<string, { count: number; resetAt: number }>()
@@ -60,44 +53,8 @@ export async function POST(req: NextRequest) {
       message: message.trim().slice(0, 5000),
     }
 
-    // Always persist to local server-store for Admin inbox
+    // Direct, instant persistence to Admin Inbox
     addInquiry(sanitized)
-
-    // Insert into Supabase if connected
-    try {
-      const supabase = createServerSupabaseClient()
-      await supabase.from('inquiries').insert({
-        name: sanitized.name,
-        email: sanitized.email,
-        company: sanitized.company,
-        message: sanitized.message,
-        created_at: new Date().toISOString(),
-      })
-    } catch (dbErr) {
-      console.warn('Supabase inquiry insert skipped/failed:', dbErr)
-    }
-
-    // Trigger emails if Resend is configured
-    if (resend) {
-      try {
-        await Promise.allSettled([
-          resend.emails.send({
-            from: 'Miko Quinit <noreply@mikoquinit.com>',
-            to: sanitized.email,
-            subject: `Inquiry Received — Michael Angelou Quinit`,
-            html: thankYouEmailTemplate(sanitized),
-          }),
-          resend.emails.send({
-            from: 'Portfolio Notification <noreply@mikoquinit.com>',
-            to: CONTACT_EMAIL,
-            subject: `⚡ New portfolio inquiry from ${sanitized.name}`,
-            html: internalNotificationTemplate(sanitized),
-          })
-        ])
-      } catch (emailErr) {
-        console.warn('Resend email dispatch error:', emailErr)
-      }
-    }
 
     return NextResponse.json(
       { success: true, message: 'Inquiry received successfully.' },

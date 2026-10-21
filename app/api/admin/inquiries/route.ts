@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { verifyAdminSession } from '@/lib/admin-auth'
 import { updateInquiry, deleteInquiry } from '@/lib/server-store'
-import { createServerSupabaseClient } from '@/lib/supabase'
 
 export async function PUT(req: NextRequest) {
   const isAdmin = await verifyAdminSession()
@@ -12,15 +11,6 @@ export async function PUT(req: NextRequest) {
     if (!id) return NextResponse.json({ error: 'Missing inquiry id' }, { status: 400 })
 
     const updated = updateInquiry(id, { is_read })
-
-    // Best-effort Supabase sync
-    try {
-      const supabase = createServerSupabaseClient()
-      await supabase.from('inquiries').update({ is_read }).eq('id', id)
-    } catch {
-      // offline/local mode
-    }
-
     return NextResponse.json({ inquiry: updated })
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : 'Failed to update inquiry'
@@ -38,15 +28,6 @@ export async function DELETE(req: NextRequest) {
     if (!id) return NextResponse.json({ error: 'Missing inquiry id' }, { status: 400 })
 
     const ok = deleteInquiry(id)
-
-    // Best-effort Supabase sync
-    try {
-      const supabase = createServerSupabaseClient()
-      await supabase.from('inquiries').delete().eq('id', id)
-    } catch {
-      // offline/local mode
-    }
-
     return NextResponse.json({ success: ok })
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : 'Failed to delete inquiry'

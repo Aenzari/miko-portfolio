@@ -1,5 +1,15 @@
 {
-  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/admin/inquiries/route": "app/api/admin/inquiries/route.js",
+  "/admin/page": "app/admin/page.js",
+  "/api/admin/config/route": "app/api/admin/config/route.js",
+  "/api/admin/login/route": "app/api/admin/login/route.js",
   "/api/admin/resume/route": "app/api/admin/resume/route.js",
-  "/admin/page": "app/admin/page.js"
+  "/api/admin/projects/route": "app/api/admin/projects/route.js",
+  "/api/admin/upload/route": "app/api/admin/upload/route.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/page": "app/page.js",
+  "/api/admin/data/route": "app/api/admin/data/route.js",
+  "/api/public/projects/route": "app/api/public/projects/route.js",
+  "/api/public/config/route": "app/api/public/config/route.js"
 }

@@ -1,16 +1,18 @@
 {
   "components\\Hero.tsx -> ./three/DataEngineScene": {
-    "id": "components\\Hero.tsx -> ./three/DataEngineScene",
+    "id": 1007,
     "files": [
-      "static/chunks/_app-pages-browser_components_three_DataEngineScene_tsx.js"
+      "static/chunks/b536a0f1.9d54f2844bc46630.js",
+      "static/chunks/584.7db7b1612c0b0fcf.js",
+      "static/chunks/7.3cf8a19335543ab4.js"
     ]
   },
   "node_modules\\@react-three\\drei\\core\\VideoTexture.js -> hls.js": {
-    "id": "node_modules\\@react-three\\drei\\core\\VideoTexture.js -> hls.js",
+    "id": null,
     "files": []
   },
   "node_modules\\@react-three\\drei\\web\\FaceLandmarker.js -> @mediapipe/tasks-vision": {
-    "id": "node_modules\\@react-three\\drei\\web\\FaceLandmarker.js -> @mediapipe/tasks-vision",
+    "id": null,
     "files": []
   }
 }
