@@ -1,25 +1,27 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import dynamic from 'next/dynamic'
-import { useState } from 'react'
-import { RecruiterModal } from './RecruiterModal'
-import { ResumeModal } from './ResumeModal'
-import { useSiteConfig } from './providers/SiteDataProvider'
-import { TiltCard } from './TiltCard'
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import { RecruiterModal } from "./RecruiterModal";
+import { ResumeModal } from "./ResumeModal";
+import { useSiteConfig } from "./providers/SiteDataProvider";
+import { TiltCard } from "./TiltCard";
 
 const DataEngineScene = dynamic(
-  () => import('./three/DataEngineScene').then((mod) => mod.DataEngineScene),
+  () => import("./three/DataEngineScene").then((mod) => mod.DataEngineScene),
   {
     ssr: false,
     loading: () => (
       <div className="w-full h-full flex flex-col items-center justify-center gap-3">
         <div className="w-10 h-10 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
-        <span className="text-[11px] font-mono text-gray-500 tracking-wider">INITIALIZING 3D ENGINE...</span>
+        <span className="text-[11px] font-mono text-gray-500 tracking-wider">
+          INITIALIZING 3D ENGINE...
+        </span>
       </div>
     ),
-  }
-)
+  },
+);
 
 const container = {
   hidden: { opacity: 0 },
@@ -27,26 +29,30 @@ const container = {
     opacity: 1,
     transition: { staggerChildren: 0.1, delayChildren: 0.15 },
   },
-}
+};
 
 const item = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
-}
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 const SKILL_PILLS = [
-  'Full-Stack Web Engineering',
-  'PostgreSQL / pgvector',
-  'Neo4j (Cypher Graphs)',
-  'Redis Pub/Sub',
-  'Next.js 14 / TypeScript',
-  'Reactive WebGL (R3F)',
-]
+  "Full-Stack Web Engineering",
+  "PostgreSQL / pgvector",
+  "Neo4j (Cypher Graphs)",
+  "Redis Pub/Sub",
+  "Next.js 14 / TypeScript",
+  "Reactive WebGL (R3F)",
+];
 
 export function Hero() {
-  const { config } = useSiteConfig()
-  const [recruiterModalOpen, setRecruiterModalOpen] = useState(false)
-  const [resumeModalOpen, setResumeModalOpen] = useState(false)
+  const { config } = useSiteConfig();
+  const [recruiterModalOpen, setRecruiterModalOpen] = useState(false);
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
   return (
     <>
@@ -65,7 +71,10 @@ export function Hero() {
               className="lg:col-span-7 space-y-6 sm:space-y-8 order-2 lg:order-1 text-center lg:text-left"
             >
               {/* Profile Identity Bar & Status Pill */}
-              <motion.div variants={item} className="flex items-center justify-center lg:justify-start gap-3.5 flex-wrap">
+              <motion.div
+                variants={item}
+                className="flex items-center justify-center lg:justify-start gap-3.5 flex-wrap"
+              >
                 {/* Micro Avatar / Monogram */}
                 <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-full glass border border-white/10 shadow-sm">
                   <div className="relative w-6 h-6 rounded-full overflow-hidden bg-navy-900 border border-accent/40 flex items-center justify-center shrink-0">
@@ -77,7 +86,9 @@ export function Hero() {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <span className="text-[10px] font-mono font-bold text-accent">MQ</span>
+                      <span className="text-[10px] font-mono font-bold text-accent">
+                        MQ
+                      </span>
                     )}
                     <span className="absolute bottom-0 right-0 w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   </div>
@@ -134,7 +145,10 @@ export function Hero() {
               </motion.p>
 
               {/* Dynamic Engineering Badges */}
-              <motion.div variants={item} className="flex flex-wrap gap-2 justify-center lg:justify-start">
+              <motion.div
+                variants={item}
+                className="flex flex-wrap gap-2 justify-center lg:justify-start"
+              >
                 {SKILL_PILLS.map((pill) => (
                   <span
                     key={pill}
@@ -146,14 +160,27 @@ export function Hero() {
               </motion.div>
 
               {/* Call-to-Actions */}
-              <motion.div variants={item} className="flex flex-wrap gap-3.5 justify-center lg:justify-start items-center pt-2">
+              <motion.div
+                variants={item}
+                className="flex flex-wrap gap-3.5 justify-center lg:justify-start items-center pt-2"
+              >
                 <a
                   href="#profile"
                   className="px-6 py-3.5 bg-accent hover:bg-accent-dark text-white font-mono font-bold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 flex items-center gap-2"
                 >
                   <span>About Architect</span>
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </a>
                 <a
@@ -161,8 +188,18 @@ export function Hero() {
                   className="px-6 py-3.5 glass hover:bg-white/[0.08] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center gap-2"
                 >
                   Inspect Systems
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </a>
                 <a
@@ -176,19 +213,39 @@ export function Hero() {
                   onClick={() => setResumeModalOpen(true)}
                   className="px-5 py-3.5 border border-white/10 hover:border-accent/40 rounded-xl text-xs font-mono text-gray-300 hover:text-white transition-all flex items-center gap-2 group"
                 >
-                  <svg className="w-4 h-4 text-accent group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <svg
+                    className="w-4 h-4 text-accent group-hover:scale-110 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
                   </svg>
                   <span>Quick-View CV</span>
                 </button>
                 <a
-                  href={config.resume_url || '/resume.pdf'}
-                  download="Michael_Angelou_Quinit_Resume.pdf"
+                  href={config.resume_url || "/resume.pdf"}
+                  download="Michael_Angelou_Quinit_Developer_Resume.pdf"
                   className="px-4 py-3.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 rounded-xl text-xs font-mono text-gray-400 hover:text-white transition-all flex items-center gap-1.5"
                   title="Direct Download PDF"
                 >
-                  <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  <svg
+                    className="w-4 h-4 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                    />
                   </svg>
                   <span>Download</span>
                 </a>
@@ -258,5 +315,5 @@ export function Hero() {
         onClose={() => setResumeModalOpen(false)}
       />
     </>
-  )
+  );
 }

@@ -1,39 +1,39 @@
-'use client'
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
-import { useSiteConfig } from './providers/SiteDataProvider'
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { useSiteConfig } from "./providers/SiteDataProvider";
 
 interface RecruiterModalProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export function RecruiterModal({ isOpen, onClose }: RecruiterModalProps) {
-  const { config } = useSiteConfig()
-  const [copiedEmail, setCopiedEmail] = useState(false)
+  const { config } = useSiteConfig();
+  const [copiedEmail, setCopiedEmail] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
-    }
+      if (e.key === "Escape") onClose();
+    };
     if (isOpen) {
-      document.body.style.overflow = 'hidden'
-      window.addEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
     }
     return () => {
-      document.body.style.overflow = 'unset'
-      window.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [isOpen, onClose])
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText(config.email)
-    setCopiedEmail(true)
-    setTimeout(() => setCopiedEmail(false), 2000)
-  }
+    navigator.clipboard.writeText(config.email);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <AnimatePresence>
@@ -52,7 +52,7 @@ export function RecruiterModal({ isOpen, onClose }: RecruiterModalProps) {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+          transition={{ type: "spring", damping: 25, stiffness: 300 }}
           className="relative w-full max-w-2xl max-h-[92vh] flex flex-col glass glow-border rounded-2xl bg-navy-950/95 border border-white/10 overflow-hidden shadow-2xl"
         >
           {/* Header */}
@@ -86,8 +86,18 @@ export function RecruiterModal({ isOpen, onClose }: RecruiterModalProps) {
               className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/[0.05] transition-colors"
               aria-label="Close modal"
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -97,21 +107,33 @@ export function RecruiterModal({ isOpen, onClose }: RecruiterModalProps) {
             {/* Quick Metrics Matrix */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                <div className="text-[10px] font-mono text-gray-400 uppercase">Target Roles</div>
+                <div className="text-[10px] font-mono text-gray-400 uppercase">
+                  Target Roles
+                </div>
                 <div className="text-xs font-semibold text-accent mt-1 leading-tight">
                   Junior Full-Stack / Web Engineer
                 </div>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                <div className="text-[10px] font-mono text-gray-400 uppercase">Candidate</div>
-                <div className="text-xs font-semibold text-white mt-1">{config.first_name} ({config.nickname})</div>
+                <div className="text-[10px] font-mono text-gray-400 uppercase">
+                  Candidate
+                </div>
+                <div className="text-xs font-semibold text-white mt-1">
+                  {config.first_name} ({config.nickname})
+                </div>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                <div className="text-[10px] font-mono text-gray-400 uppercase">Location</div>
-                <div className="text-xs font-semibold text-white mt-1">{config.city}</div>
+                <div className="text-[10px] font-mono text-gray-400 uppercase">
+                  Location
+                </div>
+                <div className="text-xs font-semibold text-white mt-1">
+                  {config.city}
+                </div>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                <div className="text-[10px] font-mono text-gray-400 uppercase">Availability</div>
+                <div className="text-[10px] font-mono text-gray-400 uppercase">
+                  Availability
+                </div>
                 <div className="text-xs font-semibold text-emerald-400 mt-1 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   Immediate / Remote
@@ -127,15 +149,29 @@ export function RecruiterModal({ isOpen, onClose }: RecruiterModalProps) {
               <div className="p-4 rounded-xl bg-navy-900/60 border border-white/[0.04] space-y-2.5 text-xs text-gray-300">
                 <div className="flex items-start gap-2">
                   <span className="text-accent font-bold">1.</span>
-                  <span><strong>Database Systems Specialization:</strong> Academic major in Database Systems (MSU-IIT). Real experience modeling ACID serializable transactions (Postgres), Graph traversals (Neo4j), and in-memory caches (Redis).</span>
+                  <span>
+                    <strong>Database Systems Specialization:</strong> Academic
+                    major in Database Systems (MSU-IIT). Real experience
+                    modeling ACID serializable transactions (Postgres), Graph
+                    traversals (Neo4j), and in-memory caches (Redis).
+                  </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-accent font-bold">2.</span>
-                  <span><strong>High-Performance Frontend:</strong> Next.js 14 (App Router), TypeScript, Tailwind CSS, Three.js / React Three Fiber procedural 3D engines, and Lenis smooth scrolling.</span>
+                  <span>
+                    <strong>High-Performance Frontend:</strong> Next.js 14 (App
+                    Router), TypeScript, Tailwind CSS, Three.js / React Three
+                    Fiber procedural 3D engines, and Lenis smooth scrolling.
+                  </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-accent font-bold">3.</span>
-                  <span><strong>Proven Systems Ownership:</strong> Architected localized marketplaces (Baylo), epidemiological command vector dashboards (EpiGraph), and real-time sports scoring engines (Golazo).</span>
+                  <span>
+                    <strong>Proven Systems Ownership:</strong> Architected
+                    localized marketplaces (Baylo), epidemiological command
+                    vector dashboards (EpiGraph), and real-time sports scoring
+                    engines (Golazo).
+                  </span>
                 </div>
               </div>
             </div>
@@ -183,15 +219,35 @@ export function RecruiterModal({ isOpen, onClose }: RecruiterModalProps) {
               >
                 {copiedEmail ? (
                   <>
-                    <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-4 h-4 text-emerald-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     <span>Copied: {config.email}</span>
                   </>
                 ) : (
                   <>
-                    <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    <svg
+                      className="w-4 h-4 text-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                      />
                     </svg>
                     <span>Copy Direct Email</span>
                   </>
@@ -200,11 +256,21 @@ export function RecruiterModal({ isOpen, onClose }: RecruiterModalProps) {
 
               <a
                 href={config.resume_url}
-                download="Michael_Angelou_Quinit_Resume.pdf"
+                download="Michael_Angelou_Quinit_Developer_Resume.pdf"
                 className="flex-1 py-3 px-4 rounded-xl bg-accent hover:bg-accent-dark text-white text-xs font-mono font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-accent/20"
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
                 </svg>
                 <span>Download Resume (PDF)</span>
               </a>
@@ -213,5 +279,5 @@ export function RecruiterModal({ isOpen, onClose }: RecruiterModalProps) {
         </motion.div>
       </div>
     </AnimatePresence>
-  )
+  );
 }
