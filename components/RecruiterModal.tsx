@@ -256,7 +256,7 @@ export function RecruiterModal({ isOpen, onClose }: RecruiterModalProps) {
 
               <a
                 href={config.resume_url}
-                download="Michael_Angelou_Quinit_Developer_Resume.pdf"
+                download="Quinit_Developer_Resume.pdf"
                 className="flex-1 py-3 px-4 rounded-xl bg-accent hover:bg-accent-dark text-white text-xs font-mono font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-accent/20"
               >
                 <svg

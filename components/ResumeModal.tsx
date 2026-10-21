@@ -82,7 +82,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="flex items-center gap-2.5">
               <a
                 href={config.resume_url || "/resume.pdf"}
-                download="Michael_Angelou_Quinit_Developer_Resume.pdf"
+                download="Quinit_Developer_Resume.pdf"
                 className="px-4 py-2 rounded-xl bg-accent hover:bg-accent-dark text-white text-xs font-mono font-bold transition-all flex items-center gap-2 shadow-md shadow-accent/20"
               >
                 <svg

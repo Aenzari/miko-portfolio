@@ -230,7 +230,7 @@ export function Hero() {
                 </button>
                 <a
                   href={config.resume_url || "/resume.pdf"}
-                  download="Michael_Angelou_Quinit_Developer_Resume.pdf"
+                  download="Quinit_Developer_Resume.pdf"
                   className="px-4 py-3.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 rounded-xl text-xs font-mono text-gray-400 hover:text-white transition-all flex items-center gap-1.5"
                   title="Direct Download PDF"
                 >
